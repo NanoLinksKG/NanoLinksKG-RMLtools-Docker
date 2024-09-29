@@ -1,0 +1,207 @@
+@prefix fno: <http://semweb.datasciencelab.be/ns/function#> .
+@prefix lib: <http://example.com/library#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix : <http://example.com/idlab/functions/string/> .
+@prefix idlab-fn: <http://example.com/idlab/function/> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+
+grel:join a fno:Function ;
+  fno:name "Join two strings" ;
+  rdfs:label "Join two strings" ;
+  dcterms:description "Join two strings" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:stringOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "join"
+  ].
+
+grel:hashAndJoin a fno:Function ;
+  fno:name "Join two strings after hashing the second" ;
+  rdfs:label "Join two strings after hashing the second" ;
+  dcterms:description "Join two strings after hashing the second" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:stringOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "hashAndJoin"
+  ].
+  
+grel:stringContains a fno:Function ;
+  fno:name "check if string contains a substring" ;
+  rdfs:label "check if string contains a substring" ;
+  dcterms:description "check if string contains a substring" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "stringContains"
+  ].
+  
+grel:stringNotContains a fno:Function ;
+  fno:name "check if string contains a substring" ;
+  rdfs:label "check if string contains a substring" ;
+  dcterms:description "check if string contains a substring" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "stringNotContains"
+  ].
+  
+grel:stringNotEmpty a fno:Function ;
+  fno:name "check if string is not empty" ;
+  rdfs:label "check if string is not empty" ;
+  dcterms:description "check if string is not empty" ;
+  fno:expects ( grel:valueParam ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "stringNotEmpty"
+  ].
+
+grel:stringNotContainsExcept a fno:Function ;
+  fno:name "check if string contains a substring except a list of values" ;
+  rdfs:label "check if string contains a substring except a list of values" ;
+  dcterms:description "check if string contains a substring except a list of values" ;
+  fno:expects ( grel:valueParam grel:valueParam2 grel:valueParam3) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "stringNotContainsExcept"
+  ].
+  
+grel:fixExpressionFloatingPoint a fno:Function ;
+  fno:name "fix Expression Floating Point" ;
+  rdfs:label "fix Expression Floating Point" ;
+  dcterms:description "fix Expression Floating Point" ;
+  fno:expects ( grel:valueParam ) ;
+  fno:returns ( grel:floatOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "fixExpressionFloatingPoint"
+  ].
+  
+grel:isRangeValue a fno:Function ;
+  fno:name "check if value is range" ;
+  rdfs:label "check if value is range" ;
+  dcterms:description "check if value is ranges" ;
+  fno:expects ( grel:valueParam ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "isRangeValue"
+  ].
+  
+grel:isValueWithQualifier a fno:Function ;
+  fno:name "check if value has qualifier" ;
+  rdfs:label "check if value has qualifier" ;
+  dcterms:description "check if value has qualifier" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "isValueWithQualifier"
+  ].
+  
+grel:isValueWithoutQualifier a fno:Function ;
+  fno:name "check if value does not have qualifier" ;
+  rdfs:label "check if value does not have qualifier" ;
+  dcterms:description "check if value does not have qualifier" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:boolOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "isValueWithoutQualifier"
+  ].
+
+grel:constructValueWithQualifier a fno:Function ;
+  fno:name "make an expression of value and its qualifier" ;
+  rdfs:label "make an expression of value and its qualifier" ;
+  dcterms:description "make an expression of value and its qualifier" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:stringOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "constructValueWithQualifier"
+  ].
+  
+grel:mapToIri a fno:Function ;
+  fno:name "map a string to IRI" ;
+  rdfs:label "map a string to IRI" ;
+  dcterms:description "map a string to IRI" ;
+  fno:expects ( grel:valueParam grel:valueParam2 ) ;
+  fno:returns ( grel:stringOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "mapToIri"
+  ].
+  
+grel:mapThenHashAndJoin a fno:Function ;
+  fno:name "map a string to an IRI, hash it with another string and append the result to a prefix IRI" ;
+  rdfs:label "map a string to an IRI, hash it with another string and append the result to a prefix IRI" ;
+  dcterms:description "map a string to an IRI, hash it with another string and append the result to a prefix IRI" ;
+  fno:expects ( grel:valueParam grel:valueParam2 grel:valueParam3 grel:valueParam4 ) ;
+  fno:returns ( grel:stringOut );
+  lib:providedBy [
+    lib:localLibrary "/app/rmlmapper-functions-1.0-Stable.jar";
+    lib:class "io.github.ammar257ammar.rml.StringUtils";
+    lib:method "mapThenHashAndJoin"
+  ].
+  
+grel:valueParam a fno:Parameter ;
+  fno:name "input value" ;
+  rdfs:label "input value" ;
+  fno:type xsd:string ;
+  fno:predicate grel:valueParameter .
+  
+grel:valueParam2 a fno:Parameter ;
+  fno:name "input value2" ;
+  rdfs:label "input value2" ;
+  fno:type xsd:string ;
+  fno:predicate grel:valueParameter2 .
+
+grel:valueParam3 a fno:Parameter ;
+  fno:name "input value3" ;
+  rdfs:label "input value3" ;
+  fno:type xsd:string ;
+  fno:predicate grel:valueParameter3 .
+  
+grel:valueParam4 a fno:Parameter ;
+  fno:name "input value4" ;
+  rdfs:label "input value4" ;
+  fno:type xsd:string ;
+  fno:predicate grel:valueParameter4 .
+  
+grel:stringOut a fno:Output ;
+  fno:name "output string" ;
+  rdfs:label "output string" ;
+  fno:type xsd:string ;
+  fno:predicate grel:stringOutput .
+  
+grel:boolOut a fno:Output ;
+  fno:name "output boolean" ;
+  rdfs:label "output boolean" ;
+  fno:type xsd:boolean ;
+  fno:predicate grel:booleanOutput .
+  
+grel:floatOut a fno:Output ;
+  fno:name "output float" ;
+  rdfs:label "output float" ;
+  fno:type xsd:float ;
+  fno:predicate grel:floatOutput .
